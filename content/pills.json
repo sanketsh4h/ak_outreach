@@ -1,0 +1,75 @@
+{
+  "greenPillUrl": null,
+  "cards": [
+    {
+      "path": "red",
+      "text": {
+        "en": "Placeholder card 1: a sourced point about screens and sleep goes here.",
+        "gu": "કામચલાઉ કાર્ડ 1: સ્ક્રીન અને ઊંઘ વિશેનો, સ્રોત સાથેનો એક મુદ્દો અહીં આવશે.",
+        "hi": "अस्थायी कार्ड 1: स्क्रीन और नींद के बारे में स्रोत सहित एक बात यहाँ आएगी।"
+      },
+      "source": null,
+      "placeholder": true
+    },
+    {
+      "path": "red",
+      "text": {
+        "en": "Placeholder card 2: a sourced point about attention and focus goes here.",
+        "gu": "કામચલાઉ કાર્ડ 2: ધ્યાન અને એકાગ્રતા વિશેનો, સ્રોત સાથેનો એક મુદ્દો અહીં આવશે.",
+        "hi": "अस्थायी कार्ड 2: ध्यान और एकाग्रता के बारे में स्रोत सहित एक बात यहाँ आएगी।"
+      },
+      "source": null,
+      "placeholder": true
+    },
+    {
+      "path": "red",
+      "text": {
+        "en": "Placeholder card 3: a sourced point about mood and wellbeing goes here.",
+        "gu": "કામચલાઉ કાર્ડ 3: મનોદશા અને સુખાકારી વિશેનો, સ્રોત સાથેનો એક મુદ્દો અહીં આવશે.",
+        "hi": "अस्थायी कार्ड 3: मनोदशा और खुशहाली के बारे में स्रोत सहित एक बात यहाँ आएगी।"
+      },
+      "source": null,
+      "placeholder": true
+    },
+    {
+      "path": "red",
+      "text": {
+        "en": "Placeholder card 4: a sourced point about how much time screens take up goes here.",
+        "gu": "કામચલાઉ કાર્ડ 4: સ્ક્રીન કેટલો સમય લઈ લે છે તે વિશેનો, સ્રોત સાથેનો એક મુદ્દો અહીં આવશે.",
+        "hi": "अस्थायी कार्ड 4: स्क्रीन कितना समय ले लेती है, इसके बारे में स्रोत सहित एक बात यहाँ आएगी।"
+      },
+      "source": null,
+      "placeholder": true
+    },
+    {
+      "path": "red",
+      "text": {
+        "en": "Placeholder card 5: a sourced point about friendships and family time goes here.",
+        "gu": "કામચલાઉ કાર્ડ 5: મિત્રતા અને પરિવાર સાથેના સમય વિશેનો, સ્રોત સાથેનો એક મુદ્દો અહીં આવશે.",
+        "hi": "अस्थायी कार्ड 5: दोस्ती और परिवार के साथ समय के बारे में स्रोत सहित एक बात यहाँ आएगी।"
+      },
+      "source": null,
+      "placeholder": true
+    },
+    {
+      "path": "blue",
+      "text": {
+        "en": "Placeholder: everything is fine. Nothing to worry about. Just keep scrolling...",
+        "gu": "કામચલાઉ: બધું બરાબર છે. કોઈ ચિંતા નથી. બસ સ્ક્રોલ કરતા રહો...",
+        "hi": "अस्थायी: सब ठीक है। कोई चिंता नहीं। बस स्क्रॉल करते रहिए..."
+      },
+      "source": null,
+      "placeholder": true
+    },
+    {
+      "path": "blue",
+      "text": {
+        "en": "Placeholder: looking away does not make it go away. Ignoring it is not an option.",
+        "gu": "કામચલાઉ: નજર ફેરવી લેવાથી વાત દૂર થતી નથી. અવગણવું એ કોઈ વિકલ્પ નથી.",
+        "hi": "अस्थायी: नज़र फेर लेने से बात ख़त्म नहीं होती। अनदेखा करना कोई विकल्प नहीं है।"
+      },
+      "source": null,
+      "placeholder": true
+    }
+  ]
+}

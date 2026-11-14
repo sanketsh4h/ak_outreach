@@ -10,6 +10,8 @@ import {
   type Story,
 } from './schemas'
 import { validateStory } from '../features/story/validate'
+import { gameIsPlaceholder } from './games'
+import { SECTION_LIST } from '../config/sections'
 
 /*
  * Content is loaded with import.meta.glob, so a new file dropped into
@@ -184,7 +186,8 @@ export function siteHasPlaceholders(): boolean {
   return (
     INTRO_COPY_IS_PLACEHOLDER ||
     STORIES.some((s) => s.placeholder) ||
-    PRASANGS.some((p) => p.placeholder)
+    PRASANGS.some((p) => p.placeholder) ||
+    SECTION_LIST.some((s) => s.games.some(gameIsPlaceholder))
   )
 }
 

@@ -4,6 +4,7 @@ import { Card, CardItem, CardList } from '../components/Card'
 import { GameArt, PrasangArt, StoryArt } from '../components/Art'
 import { SECTIONS, paths, type SectionId } from '../config/sections'
 import { partHasPlaceholders } from '../content'
+import { gameIsPlaceholder } from '../content/games'
 import styles from './pages.module.css'
 
 export default function SectionHome({ section }: { section: SectionId }) {
@@ -21,6 +22,7 @@ export default function SectionHome({ section }: { section: SectionId }) {
             title={t('part.activity.title')}
             description={t(config.activityDescKey)}
             art={<GameArt />}
+            placeholder={config.games.some(gameIsPlaceholder)}
           />
         </CardItem>
         <CardItem>

@@ -3,6 +3,7 @@ import { usePage } from '../components/page-context'
 import { Card, CardItem, CardList } from '../components/Card'
 import { GameArt } from '../components/Art'
 import { GAMES, SECTIONS, paths, type SectionId } from '../config/sections'
+import { gameIsPlaceholder } from '../content/games'
 
 export default function GamesList({ section }: { section: SectionId }) {
   const { t } = useI18n()
@@ -20,6 +21,7 @@ export default function GamesList({ section }: { section: SectionId }) {
               title={t(GAMES[id].titleKey)}
               description={t(GAMES[id].descKey)}
               art={<GameArt />}
+              placeholder={gameIsPlaceholder(id)}
             />
           </CardItem>
         ))}

@@ -1,0 +1,226 @@
+.game {
+  display: flex;
+  flex-direction: column;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.screen h2 {
+  font-size: var(--font-size-h2);
+}
+
+.choices {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+@media (min-width: 36rem) {
+  .choices {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Pills: capsule-shaped buttons. Each carries its name and a hint in text, so colour is never the only signal. */
+.pill {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 72px;
+  padding: var(--space-3) var(--space-5);
+  border: 3px solid transparent;
+  border-radius: 999px;
+  color: var(--pill-on);
+  font: inherit;
+  text-align: start;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+}
+
+.pill:hover {
+  transform: translateY(-1px);
+}
+
+.pill:active {
+  transform: scale(0.98);
+}
+
+.red {
+  background: var(--pill-red);
+}
+
+.blue {
+  background: var(--pill-blue);
+}
+
+.green {
+  background: var(--pill-green);
+}
+
+.capsule {
+  flex: none;
+  width: 48px;
+  height: 24px;
+}
+
+.pillText {
+  display: flex;
+  flex-direction: column;
+}
+
+.pillName {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.pillHint {
+  font-size: 0.9375rem;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-1);
+  color: var(--color-muted);
+  font-weight: 700;
+}
+
+.dots {
+  display: flex;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+
+.dots li {
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--pill-red);
+  border-radius: 50%;
+}
+
+.dots .dotDone {
+  background: var(--pill-red);
+}
+
+.card {
+  margin-bottom: var(--space-4);
+  padding: var(--space-5) var(--space-4) var(--space-3);
+  border: 2px solid var(--color-border);
+  border-inline-start: 8px solid var(--pill-red);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+.cardText {
+  font-size: var(--font-size-lead);
+  font-weight: 700;
+}
+
+.source {
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+}
+
+.sourceNeeded {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0.1em 0.6em;
+  border: 2px dashed var(--color-danger);
+  border-radius: var(--radius-small);
+  color: var(--color-danger);
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--tap);
+  padding: 0 var(--space-4);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.secondary {
+  background: var(--color-surface);
+  color: var(--color-primary-strong);
+}
+
+/* The "look away" screen: soft and calm, then it dissolves. */
+.bliss {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  min-height: 16rem;
+  padding: var(--space-6) var(--space-4);
+  border: 0;
+  border-radius: var(--radius);
+  background: radial-gradient(circle at 30% 30%, #e8f0ff, #c9daf8 60%, #b8cdf2);
+  color: #102a57;
+  text-align: center;
+}
+
+.blissButton {
+  width: 100%;
+  cursor: pointer;
+  transition:
+    opacity 900ms ease,
+    filter 900ms ease;
+}
+
+.blissText {
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
+.blissHint {
+  font-size: 0.9375rem;
+  text-decoration: underline;
+}
+
+.fading {
+  opacity: 0;
+  filter: blur(6px);
+}
+
+.message {
+  padding: var(--space-3) var(--space-4);
+  border-inline-start: 6px solid var(--pill-blue);
+  background: var(--color-surface);
+  font-size: var(--font-size-lead);
+  font-weight: 700;
+}
+
+.greenRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
