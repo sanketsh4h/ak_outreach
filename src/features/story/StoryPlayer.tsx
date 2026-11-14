@@ -6,6 +6,7 @@ import { LessonBox } from '../../components/LessonBox'
 import { ContentImage } from '../../components/ContentImage'
 import { PlaceholderNotice } from '../../components/Placeholder'
 import { focusElement } from '../../components/focus'
+import { usePrefersReducedMotion } from '../../components/motion'
 import type { Story, StoryNode } from '../../content/schemas'
 import type { SectionId } from '../../config/sections'
 import { storyReducer } from './state'
@@ -46,6 +47,7 @@ export function StoryPlayer({ story, section }: { story: Story; section: Section
   const isFirst = useRef(true)
   const headingId = useId()
   const pictureFirst = section === 'bhulkao'
+  const reducedMotion = usePrefersReducedMotion()
 
   // Move focus to the new step's heading whenever the step changes (not on first load).
   useEffect(() => {
@@ -54,8 +56,11 @@ export function StoryPlayer({ story, section }: { story: Story; section: Section
       return
     }
     focusElement(headingRef.current)
-    headingRef.current?.scrollIntoView({ block: 'start', behavior: 'smooth' })
-  }, [history])
+    headingRef.current?.scrollIntoView({
+      block: 'start',
+      behavior: reducedMotion ? 'auto' : 'smooth',
+    })
+  }, [history, reducedMotion])
 
   const media = <NodeMedia node={node} placeholder={story.placeholder} />
 

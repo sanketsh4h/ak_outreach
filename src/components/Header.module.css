@@ -17,7 +17,7 @@
 .title {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  min-height: var(--tap);
   color: var(--color-text);
   font-size: 1.125rem;
   font-weight: 700;
@@ -38,6 +38,6 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
-  min-height: 44px;
+  min-height: var(--tap);
   font-weight: 700;
 }

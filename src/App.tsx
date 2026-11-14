@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import { I18nProvider } from './i18n/I18nProvider'
 import { Layout } from './components/Layout'
@@ -8,8 +9,16 @@ import GamesList from './pages/GamesList'
 import GamePage from './pages/GamePage'
 import ItemList from './pages/ItemList'
 import NotFound from './pages/NotFound'
-import StoryPage from './pages/StoryPage'
-import PrasangPage from './pages/PrasangPage'
+import { useI18n } from './i18n/context'
+
+// Story and prasang pages load on demand (the prasang reader brings in the markdown renderer).
+const StoryPage = lazy(() => import('./pages/StoryPage'))
+const PrasangPage = lazy(() => import('./pages/PrasangPage'))
+
+function Loading() {
+  const { t } = useI18n()
+  return <p role="status">{t('common.loading')}</p>
+}
 
 /** React Router wants the base path without a trailing slash. */
 const basename = import.meta.env.BASE_URL.replace(/\/+$/, '') || '/'
@@ -33,9 +42,23 @@ export default function App() {
                   />
                 ))}
                 <Route path={s.storySegment} element={<ItemList section={s.id} kind="story" />} />
-                <Route path={`${s.storySegment}/:id`} element={<StoryPage section={s.id} />} />
+                <Route
+                  path={`${s.storySegment}/:id`}
+                  element={
+                    <Suspense fallback={<Loading />}>
+                      <StoryPage section={s.id} />
+                    </Suspense>
+                  }
+                />
                 <Route path="prasang" element={<ItemList section={s.id} kind="prasang" />} />
-                <Route path="prasang/:id" element={<PrasangPage section={s.id} />} />
+                <Route
+                  path="prasang/:id"
+                  element={
+                    <Suspense fallback={<Loading />}>
+                      <PrasangPage section={s.id} />
+                    </Suspense>
+                  }
+                />
                 <Route path="*" element={<NotFound section={s.id} />} />
               </Route>
             ))}
