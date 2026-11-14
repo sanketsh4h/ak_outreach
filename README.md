@@ -41,3 +41,18 @@ The build follows [`docs/BUILD_PLAN.md`](docs/BUILD_PLAN.md).
   this with a local rule.
 - Content files sit at the repository root (`content/`, `locales/`) so that
   people editing text never need to open `src/`.
+
+## Hosting
+
+The site is a static build and can be hosted anywhere. The owner chose
+**GitHub Pages**: <https://sanketsh4h.github.io/ak_outreach/>.
+
+- `.github/workflows/pages.yml` builds with `BASE_PATH=/ak_outreach/` and
+  deploys after the CI workflow passes on `main`. It can also be run by hand
+  from the Actions tab ("Deploy to GitHub Pages" → "Run workflow").
+- One-time setup in the repository: **Settings → Pages → Build and deployment →
+  Source: GitHub Actions**.
+- Deep links work on Pages because the build copies `index.html` to `404.html`.
+  On another host, add a rewrite that serves `index.html` for every path that
+  is not a file (for example Netlify `/* /index.html 200`, or nginx
+  `try_files $uri /index.html`).
