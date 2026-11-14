@@ -1,0 +1,38 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--font-size);
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+}
+
+.main:focus {
+  outline: none;
+}
+
+.skip {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 10;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-small);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+.skip:focus {
+  transform: none;
+}

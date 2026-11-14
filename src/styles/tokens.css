@@ -1,0 +1,87 @@
+/*
+ * Design tokens. This is the one file to change for branding (open question 8):
+ * the palette below is a placeholder. Text colours are chosen for WCAG AA
+ * contrast against the backgrounds they sit on.
+ */
+:root {
+  /* Neutral base, used on the intro page and shared pages. */
+  --color-bg: #f7f5f0;
+  --color-surface: #ffffff;
+  --color-surface-alt: #eef1f4;
+  --color-text: #1c2230;
+  --color-muted: #4b5466;
+  --color-border: #c9ced8;
+  --color-primary: #1d5f7a;
+  --color-primary-strong: #144559;
+  --color-on-primary: #ffffff;
+  --color-accent: #f4c552;
+  --color-on-accent: #1c2230;
+  --color-lesson-bg: #fff4d6;
+  --color-lesson-border: #c98a00;
+  --color-sample-bg: #ffe9e0;
+  --color-sample-text: #8a2c0d;
+  --color-focus: #0a3a8c;
+  --color-danger: #b42318;
+  --color-success: #1e6b3a;
+
+  /* Game colours. Every state also carries a text label, icon or shape. */
+  --pill-red: #b3261e;
+  --pill-blue: #1557b0;
+  --pill-green: #1e6b3a;
+  --pill-on: #ffffff;
+  --tile-correct-bg: #1d5f7a;
+  --tile-correct-text: #ffffff;
+  --tile-present-bg: #f4c552;
+  --tile-present-text: #1c2230;
+  --tile-absent-bg: #d5d9e0;
+  --tile-absent-text: #1c2230;
+  --doodle-good: #2f8f5b;
+  --doodle-bad: #c2410c;
+
+  /* Shape, size and type. Sections override some of these. */
+  --radius: 12px;
+  --radius-small: 8px;
+  --tap: 44px;
+  --font-size: 1rem;
+  --font-size-lead: 1.125rem;
+  --font-size-h1: 1.75rem;
+  --font-size-h2: 1.25rem;
+  --line-height: 1.5;
+  --line-height-indic: 1.7;
+  --content-width: 42rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --shadow: 0 1px 2px rgb(16 24 40 / 8%), 0 2px 6px rgb(16 24 40 / 8%);
+  --transition: 150ms ease;
+}
+
+/* Bhulkao: picture-led, larger type, rounded shapes, tap targets of 56px or more. */
+[data-section='bhulkao'] {
+  --color-bg: #fff6e5;
+  --color-surface-alt: #fdebc8;
+  --color-primary: #5b3a9b;
+  --color-primary-strong: #432a75;
+  --color-border: #e2c99a;
+  --radius: 22px;
+  --radius-small: 14px;
+  --tap: 56px;
+  --font-size: 1.125rem;
+  --font-size-lead: 1.25rem;
+  --font-size-h1: 2rem;
+  --font-size-h2: 1.375rem;
+}
+
+/* Yuvako: calmer, text-led, tap targets of 44px or more. */
+[data-section='yuvako'] {
+  --color-bg: #f2f4f7;
+  --color-surface-alt: #e4e9ef;
+  --color-primary: #1d4f78;
+  --color-primary-strong: #133752;
+  --radius: 10px;
+  --radius-small: 6px;
+  --tap: 44px;
+}

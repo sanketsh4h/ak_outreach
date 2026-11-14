@@ -1,0 +1,42 @@
+.switch {
+  display: flex;
+  gap: var(--space-1);
+  padding: 3px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+}
+
+.option {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.option:lang(gu) {
+  font-family: 'Noto Sans Gujarati', 'Switch Gujarati', system-ui, sans-serif;
+}
+
+.option:lang(hi) {
+  font-family: 'Noto Sans Devanagari', 'Switch Devanagari', system-ui, sans-serif;
+}
+
+.option:hover {
+  background: var(--color-surface-alt);
+}
+
+/* The chosen language is shown by a filled background and a bold weight, not colour alone. */
+.option[aria-pressed='true'] {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}

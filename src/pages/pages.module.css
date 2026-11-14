@@ -1,0 +1,25 @@
+.lead {
+  font-size: var(--font-size-lead);
+}
+
+.empty {
+  padding: var(--space-4);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  font-weight: 700;
+}
