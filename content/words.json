@@ -1,0 +1,220 @@
+{
+  "words": [
+    {
+      "word": "seva",
+      "native": {
+        "gu": "સેવા",
+        "hi": "सेवा"
+      },
+      "meaning": {
+        "en": "Selfless service: helping others without expecting anything back.",
+        "gu": "નિઃસ્વાર્થ સેવા: બદલાની આશા રાખ્યા વિના બીજાને મદદ કરવી.",
+        "hi": "निःस्वार्थ सेवा: बदले की उम्मीद किए बिना दूसरों की मदद करना।"
+      },
+      "reflection": {
+        "en": "Placeholder reflection: what small act of seva could you do today, away from a screen?",
+        "gu": "કામચલાઉ મનન: આજે સ્ક્રીનથી દૂર રહીને તમે સેવાનું કયું નાનું કામ કરી શકો?",
+        "hi": "अस्थायी मनन: आज स्क्रीन से दूर रहकर आप सेवा का कौन-सा छोटा काम कर सकते हैं?"
+      },
+      "placeholder": true
+    },
+    {
+      "word": "swadharma",
+      "native": {
+        "gu": "સ્વધર્મ",
+        "hi": "स्वधर्म"
+      },
+      "meaning": {
+        "en": "One's own duty: doing what is right for one's own role in life.",
+        "gu": "પોતાનો ધર્મ: જીવનમાં પોતાની ભૂમિકા માટે જે યોગ્ય છે તે કરવું.",
+        "hi": "अपना धर्म: जीवन में अपनी भूमिका के लिए जो सही है, वह करना।"
+      },
+      "reflection": {
+        "en": "Placeholder reflection: what is your duty today, as a student, a friend or a family member?",
+        "gu": "કામચલાઉ મનન: વિદ્યાર્થી, મિત્ર કે પરિવારના સભ્ય તરીકે આજે તમારી ફરજ શું છે?",
+        "hi": "अस्थायी मनन: विद्यार्थी, दोस्त या परिवार के सदस्य के रूप में आज आपका कर्तव्य क्या है?"
+      },
+      "placeholder": true
+    },
+    {
+      "word": "prarthna",
+      "native": {
+        "gu": "પ્રાર્થના",
+        "hi": "प्रार्थना"
+      },
+      "meaning": {
+        "en": "Prayer: speaking to God from the heart.",
+        "gu": "ભગવાન સાથે મનથી વાત કરવી.",
+        "hi": "ईश्वर से मन से बात करना।"
+      },
+      "reflection": {
+        "en": "Placeholder reflection: when could you set aside a few quiet minutes for prayer, with your phone out of reach?",
+        "gu": "કામચલાઉ મનન: ફોન દૂર રાખીને પ્રાર્થના માટે થોડી શાંત મિનિટો તમે ક્યારે કાઢી શકો?",
+        "hi": "अस्थायी मनन: फ़ोन दूर रखकर प्रार्थना के लिए कुछ शांत मिनट आप कब निकाल सकते हैं?"
+      },
+      "placeholder": true
+    },
+    {
+      "word": "daya",
+      "native": {
+        "gu": "દયા",
+        "hi": "दया"
+      },
+      "meaning": {
+        "en": "Compassion; kindness towards others.",
+        "gu": "કરુણા; બીજા પ્રત્યે માયાળુપણું.",
+        "hi": "करुणा; दूसरों के प्रति दयालुता।"
+      },
+      "reflection": {
+        "en": "Placeholder reflection: how can you show daya in the way you write to others online?",
+        "gu": "કામચલાઉ મનન: ઑનલાઇન બીજાને લખતી વખતે તમે દયા કેવી રીતે બતાવી શકો?",
+        "hi": "अस्थायी मनन: ऑनलाइन दूसरों को लिखते समय आप दया कैसे दिखा सकते हैं?"
+      },
+      "placeholder": true
+    },
+    {
+      "word": "satya",
+      "native": {
+        "gu": "સત્ય",
+        "hi": "सत्य"
+      },
+      "meaning": {
+        "en": "Truth; being truthful.",
+        "gu": "સચ્ચાઈ; સાચું બોલવું.",
+        "hi": "सच्चाई; सच बोलना।"
+      },
+      "reflection": {
+        "en": "Placeholder reflection: is the picture you share of yourself online a truthful one?",
+        "gu": "કામચલાઉ મનન: ઑનલાઇન તમે પોતાની જે છબી બતાવો છો તે સાચી છે?",
+        "hi": "अस्थायी मनन: ऑनलाइन आप अपनी जो छवि दिखाते हैं, क्या वह सच्ची है?"
+      },
+      "placeholder": true
+    },
+    {
+      "word": "shanti",
+      "native": {
+        "gu": "શાંતિ",
+        "hi": "शांति"
+      },
+      "meaning": {
+        "en": "Peace; a calm and settled mind.",
+        "gu": "મનની સ્થિરતા અને સુખ.",
+        "hi": "मन की स्थिरता और चैन।"
+      },
+      "reflection": {
+        "en": "Placeholder reflection: what helps your mind feel settled after a busy day?",
+        "gu": "કામચલાઉ મનન: વ્યસ્ત દિવસ પછી તમારા મનને શાંત થવામાં શું મદદ કરે છે?",
+        "hi": "अस्थायी मनन: व्यस्त दिन के बाद आपके मन को शांत होने में क्या मदद करता है?"
+      },
+      "placeholder": true
+    },
+    {
+      "word": "dhyan",
+      "native": {
+        "gu": "ધ્યાન",
+        "hi": "ध्यान"
+      },
+      "meaning": {
+        "en": "Meditation; steady, focused attention.",
+        "gu": "મનને એક જગ્યાએ સ્થિર રાખવું.",
+        "hi": "मन को एक जगह टिकाना।"
+      },
+      "reflection": {
+        "en": "Placeholder reflection: how long can you give one thing your full attention before reaching for your phone?",
+        "gu": "કામચલાઉ મનન: ફોન તરફ હાથ જાય તે પહેલાં તમે કોઈ એક કામ પર કેટલો સમય પૂરું ધ્યાન આપી શકો છો?",
+        "hi": "अस्थायी मनन: फ़ोन की ओर हाथ बढ़ने से पहले आप किसी एक काम पर कितनी देर पूरा ध्यान दे पाते हैं?"
+      },
+      "placeholder": true
+    },
+    {
+      "word": "bhakti",
+      "native": {
+        "gu": "ભક્તિ",
+        "hi": "भक्ति"
+      },
+      "meaning": {
+        "en": "Devotion; loving faith in God.",
+        "gu": "ભગવાન પ્રત્યે પ્રેમભરી શ્રદ્ધા.",
+        "hi": "ईश्वर के प्रति प्रेम भरी श्रद्धा।"
+      },
+      "reflection": {
+        "en": "Placeholder reflection: what in your day do you give your heart to most?",
+        "gu": "કામચલાઉ મનન: તમારા દિવસમાં તમે સૌથી વધુ મન શેમાં પરોવો છો?",
+        "hi": "अस्थायी मनन: अपने दिन में आप सबसे ज़्यादा मन किसमें लगाते हैं?"
+      },
+      "placeholder": true
+    },
+    {
+      "word": "kshama",
+      "native": {
+        "gu": "ક્ષમા",
+        "hi": "क्षमा"
+      },
+      "meaning": {
+        "en": "Forgiveness.",
+        "gu": "માફી આપવી; બીજાની ભૂલ માફ કરવી.",
+        "hi": "माफ़ करना; दूसरों की गलती को माफ़ कर देना।"
+      },
+      "reflection": {
+        "en": "Placeholder reflection: is there someone you could forgive today, even for a small thing?",
+        "gu": "કામચલાઉ મનન: શું કોઈ એવું છે જેને તમે આજે, ભલે નાની વાત માટે, માફ કરી શકો?",
+        "hi": "अस्थायी मनन: क्या कोई है जिसे आप आज, छोटी बात के लिए ही सही, माफ़ कर सकते हैं?"
+      },
+      "placeholder": true
+    },
+    {
+      "word": "santosh",
+      "native": {
+        "gu": "સંતોષ",
+        "hi": "संतोष"
+      },
+      "meaning": {
+        "en": "Contentment; being satisfied with what one has.",
+        "gu": "જે છે તેમાં રાજી રહેવું.",
+        "hi": "जो है उसमें खुश रहना।"
+      },
+      "reflection": {
+        "en": "Placeholder reflection: does scrolling through others' lives leave you feeling content, or wanting more?",
+        "gu": "કામચલાઉ મનન: બીજાના જીવન વિશે સ્ક્રોલ કર્યા પછી તમને સંતોષ થાય છે કે હજી વધુ જોઈએ એવું લાગે છે?",
+        "hi": "अस्थायी मनन: दूसरों की ज़िंदगी पर स्क्रॉल करने के बाद आपको संतोष होता है, या और चाहिए जैसा लगता है?"
+      },
+      "placeholder": true
+    },
+    {
+      "word": "vinay",
+      "native": {
+        "gu": "વિનય",
+        "hi": "विनय"
+      },
+      "meaning": {
+        "en": "Humility; politeness.",
+        "gu": "નમ્રતા; વિવેક.",
+        "hi": "नम्रता; शिष्टता।"
+      },
+      "reflection": {
+        "en": "Placeholder reflection: what does humility look like in a comment or a reply?",
+        "gu": "કામચલાઉ મનન: કોઈ કોમેન્ટ કે જવાબમાં નમ્રતા કેવી દેખાય?",
+        "hi": "अस्थायी मनन: किसी कमेंट या जवाब में नम्रता कैसी दिखती है?"
+      },
+      "placeholder": true
+    },
+    {
+      "word": "sanyam",
+      "native": {
+        "gu": "સંયમ",
+        "hi": "संयम"
+      },
+      "meaning": {
+        "en": "Self-restraint; self-control.",
+        "gu": "પોતાના પર કાબૂ; આત્મસંયમ.",
+        "hi": "अपने ऊपर काबू; आत्म-नियंत्रण।"
+      },
+      "reflection": {
+        "en": "Placeholder reflection: what is one limit you could set for yourself on screen time this week?",
+        "gu": "કામચલાઉ મનન: આ અઠવાડિયે સ્ક્રીન સમય માટે તમે પોતાના માટે કઈ એક મર્યાદા નક્કી કરી શકો?",
+        "hi": "अस्थायी मनन: इस हफ़्ते स्क्रीन समय के लिए आप अपने लिए कौन-सी एक सीमा तय कर सकते हैं?"
+      },
+      "placeholder": true
+    }
+  ]
+}
