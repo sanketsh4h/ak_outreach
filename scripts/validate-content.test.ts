@@ -95,4 +95,20 @@ describe('validateContent', () => {
     edit(dir, 'locales/hi.json', (s) => s.replace('{page} पर वापस जाएँ', '{pg} पर वापस जाएँ'))
     expect(errorsOf(dir).join('\n')).toMatch(/nav\.back.*same \{placeholders\}/)
   })
+
+  it('warns, without failing, about an unknown doodle icon', () => {
+    const dir = fixture()
+    edit(dir, 'content/doodle-items.json', (s) => s.replace('"icon": "book"', '"icon": "unicorn"'))
+    const { problems } = validateContent(dir)
+    expect(problems.filter((p) => p.severity === 'error')).toEqual([])
+    expect(
+      problems.some((p) => p.severity === 'warning' && /unknown icon "unicorn"/.test(p.message)),
+    ).toBe(true)
+  })
+
+  it('fails a negative doodle item without an explanation', () => {
+    const dir = fixture()
+    edit(dir, 'content/doodle-items.json', (s) => s.replace(/"explanation": \{[^}]*\},?/, ''))
+    expect(errorsOf(dir).join('\n')).toMatch(/negative item needs an explanation/)
+  })
 })

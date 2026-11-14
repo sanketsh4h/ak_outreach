@@ -1,0 +1,166 @@
+{
+  "config": {
+    "startSpeed": 90,
+    "speedRamp": 3,
+    "maxSpeed": 260,
+    "spawnInterval": 1.1,
+    "negativeShare": 0.3
+  },
+  "items": [
+    {
+      "label": {
+        "en": "Reading",
+        "gu": "વાંચન",
+        "hi": "पढ़ना"
+      },
+      "kind": "positive",
+      "icon": "book",
+      "placeholder": true
+    },
+    {
+      "label": {
+        "en": "Good sleep",
+        "gu": "સારી ઊંઘ",
+        "hi": "अच्छी नींद"
+      },
+      "kind": "positive",
+      "icon": "moon",
+      "placeholder": true
+    },
+    {
+      "label": {
+        "en": "Family",
+        "gu": "પરિવાર",
+        "hi": "परिवार"
+      },
+      "kind": "positive",
+      "icon": "family",
+      "placeholder": true
+    },
+    {
+      "label": {
+        "en": "Play outside",
+        "gu": "બહાર રમવું",
+        "hi": "बाहर खेलना"
+      },
+      "kind": "positive",
+      "icon": "ball",
+      "placeholder": true
+    },
+    {
+      "label": {
+        "en": "Prayer",
+        "gu": "પ્રાર્થના",
+        "hi": "प्रार्थना"
+      },
+      "kind": "positive",
+      "icon": "hands",
+      "placeholder": true
+    },
+    {
+      "label": {
+        "en": "Helping",
+        "gu": "મદદ",
+        "hi": "मदद"
+      },
+      "kind": "positive",
+      "icon": "heart",
+      "placeholder": true
+    },
+    {
+      "label": {
+        "en": "Homework",
+        "gu": "હોમવર્ક",
+        "hi": "होमवर्क"
+      },
+      "kind": "positive",
+      "icon": "pencil",
+      "placeholder": true
+    },
+    {
+      "label": {
+        "en": "Nature",
+        "gu": "કુદરત",
+        "hi": "प्रकृति"
+      },
+      "kind": "positive",
+      "icon": "tree",
+      "placeholder": true
+    },
+    {
+      "label": {
+        "en": "Scrolling",
+        "gu": "સ્ક્રોલિંગ",
+        "hi": "स्क्रॉलिंग"
+      },
+      "kind": "negative",
+      "icon": "phone",
+      "explanation": {
+        "en": "Scrolling can go on and on, and the time slips away without us noticing.",
+        "gu": "સ્ક્રોલિંગ ચાલ્યા જ કરે છે, અને ખબર પણ ન પડે એમ સમય વહી જાય છે.",
+        "hi": "स्क्रॉलिंग चलती ही रहती है, और पता भी नहीं चलता कि समय कब निकल गया।"
+      },
+      "placeholder": true
+    },
+    {
+      "label": {
+        "en": "Pings",
+        "gu": "નોટિફિકેશન",
+        "hi": "नोटिफ़िकेशन"
+      },
+      "kind": "negative",
+      "icon": "bell",
+      "explanation": {
+        "en": "Each ping pulls our attention away from what we were doing.",
+        "gu": "દરેક નોટિફિકેશન આપણું ધ્યાન આપણા કામમાંથી ખેંચી લે છે.",
+        "hi": "हर नोटिफ़िकेशन हमारा ध्यान हमारे काम से खींच लेता है।"
+      },
+      "placeholder": true
+    },
+    {
+      "label": {
+        "en": "Autoplay",
+        "gu": "ઑટોપ્લે",
+        "hi": "ऑटोप्ले"
+      },
+      "kind": "negative",
+      "icon": "loop",
+      "explanation": {
+        "en": "The next video starts before we have even decided to watch it.",
+        "gu": "આપણે નક્કી કરીએ તે પહેલાં જ આગળનો વીડિયો શરૂ થઈ જાય છે.",
+        "hi": "हम तय करें, उससे पहले ही अगला वीडियो शुरू हो जाता है।"
+      },
+      "placeholder": true
+    },
+    {
+      "label": {
+        "en": "Screen at bedtime",
+        "gu": "સૂતી વખતે સ્ક્રીન",
+        "hi": "सोते समय स्क्रीन"
+      },
+      "kind": "negative",
+      "icon": "screen",
+      "explanation": {
+        "en": "A screen at bedtime can make it harder to calm down and fall asleep.",
+        "gu": "સૂતી વખતે સ્ક્રીન જોવાથી શાંત થઈને ઊંઘવું અઘરું બની શકે છે.",
+        "hi": "सोते समय स्क्रीन देखने से शांत होकर सोना मुश्किल हो सकता है।"
+      },
+      "placeholder": true
+    },
+    {
+      "label": {
+        "en": "Too much gaming",
+        "gu": "વધુ પડતી ગેમ",
+        "hi": "बहुत ज़्यादा गेम"
+      },
+      "kind": "negative",
+      "icon": "controller",
+      "explanation": {
+        "en": "Games are fun, but hours of them leave no time for anything else.",
+        "gu": "રમતો મજાની છે, પણ કલાકો સુધી રમીએ તો બીજા કશા માટે સમય બચતો નથી.",
+        "hi": "गेम मज़ेदार हैं, पर घंटों खेलने से किसी और चीज़ के लिए समय नहीं बचता।"
+      },
+      "placeholder": true
+    }
+  ]
+}

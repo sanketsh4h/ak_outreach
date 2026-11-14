@@ -5,5 +5,5 @@ import type { GameId } from '../config/sections'
 export const GAME_COMPONENTS: Record<GameId, LazyExoticComponent<ComponentType>> = {
   pills: lazy(() => import('./pills/PillGame')),
   words: lazy(() => import('./words/WordGame')),
-  doodle: lazy(() => import('./UnderConstruction')),
+  doodle: lazy(() => import('./doodle/DoodleGame')),
 }

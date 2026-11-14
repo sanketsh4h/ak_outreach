@@ -1,7 +1,15 @@
 import pillsRaw from '../../content/pills.json'
 import wordsRaw from '../../content/words.json'
+import doodleRaw from '../../content/doodle-items.json'
 import type { GameId } from '../config/sections'
-import { pills as pillsSchema, words as wordsSchema, type Pills, type WordEntry } from './schemas'
+import {
+  doodle as doodleSchema,
+  pills as pillsSchema,
+  words as wordsSchema,
+  type DoodleContent,
+  type Pills,
+  type WordEntry,
+} from './schemas'
 
 /** A game content file after schema checking: the data, or the problems that stop it loading. */
 export type Loaded<T> = { data: T; errors: [] } | { data: null; errors: string[] }
@@ -35,6 +43,8 @@ export function pillsArePlaceholder(data: Pills | null = PILLS.data): boolean {
 
 export const WORDS: Loaded<{ words: WordEntry[] }> = load(wordsSchema, wordsRaw)
 
+export const DOODLE: Loaded<DoodleContent> = load(doodleSchema, doodleRaw)
+
 /** Whether a game currently shows placeholder content (for badges and the preview strip). */
 export function gameIsPlaceholder(id: GameId): boolean {
   switch (id) {
@@ -43,6 +53,6 @@ export function gameIsPlaceholder(id: GameId): boolean {
     case 'words':
       return !WORDS.data || WORDS.data.words.some((w) => w.placeholder)
     case 'doodle':
-      return true
+      return !DOODLE.data || DOODLE.data.items.some((i) => i.placeholder)
   }
 }
