@@ -268,7 +268,7 @@ From section 2 of the build plan, with their status after this build.
 | #   | Question                                             | Status                                                                                                                                                                                                                                                                                                                                                         |
 | --- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1   | Commit to the default branch, or a branch with a PR? | **Answered.** Work happens on `claude/webapp-build-plan-initial-0ecfpc`. When the owner asked for the site to go live, they approved fast-forwarding `main` to it, so `main` matches the build branch. No pull request has been opened.                                                                                                                        |
-| 2   | What does the green pill open?                       | **Partly answered.** The owner confirmed it has nothing to do with Harvard. **Still open:** the real destination. `greenPillUrl` is `null`, so the green pill opens an on-site placeholder screen. No Harvard link or wording appears anywhere (a unit test checks this).                                                                                      |
+| 2   | What does the green pill open?                       | Not Harvard; destination still to be supplied. `greenPillUrl` in `content/pills.json` is `null`, so the green pill opens an on-site placeholder screen until a destination is set.                                                                                                                                                                             |
 | 3   | Word list spellings and length rule                  | **Partly answered.** Owner-confirmed words: `seva`, `swadharma`, `prarthna` (native forms included); their meanings and reflections are placeholders. The other nine words (daya, satya, shanti, dhyan, bhakti, kshama, santosh, vinay, sanyam) are placeholders. The length rule (a–z, 3 to 10 letters) is the plan's default and **still needs confirming**. |
 | 4   | Who translates and reviews Gujarati and Hindi?       | **Open.** All Gujarati and Hindi text is a draft written by the builder, flagged unreviewed, with a note in the footer.                                                                                                                                                                                                                                        |
 | 5   | Native-script play in the word game?                 | **Open (default applied).** Played in Latin transliteration in all languages; meaning, reflection and native-script forms are shown in the chosen language.                                                                                                                                                                                                    |
@@ -301,7 +301,7 @@ Before this site is presented as final:
 
 1. **Followed the owner-amended plan.** The build was started from the first
    version of the plan. The branch then turned out to hold an amended version
-   with owner corrections (the green pill is not about Harvard; the third word
+   with owner corrections (the green pill's destination is not yet supplied; the third word
    is `prarthna` with native forms; much stronger placeholder marking). The
    build follows the amended version, which is now `docs/BUILD_PLAN.md`.
 2. **Went live.** The plan said nothing would be deployed until the owner
@@ -411,7 +411,7 @@ tests/e2e/      Playwright tests
   machine, word scoring (two-pass, including the three a's in "swadharma") and
   the daily word, doodle `step()` with a seeded random source, the content
   validator against deliberately broken copies of the content, and a guard
-  that no "Harvard" text exists.
+  that the green pill's old stand-in link and wording appear nowhere.
 - `npm run test:e2e`, at 360px with touch and at desktop size: every route in
   every language (no horizontal scroll, no axe violations, no request to any
   other site); language persistence; two story endings; a prasang to its
