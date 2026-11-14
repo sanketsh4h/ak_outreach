@@ -9,7 +9,6 @@ export function Footer() {
       <div className={styles.inner}>
         {ORGANISATION.name && <p className={styles.org}>{l(ORGANISATION.name)}</p>}
         {ORGANISATION.contact && <p>{l(ORGANISATION.contact)}</p>}
-        <p>{t('footer.sampleNote')}</p>
         {!TRANSLATION_REVIEWED[lang] && (
           <p className={styles.note} data-testid="translation-note">
             {t('footer.translationNote')}

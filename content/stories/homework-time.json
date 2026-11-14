@@ -1,0 +1,198 @@
+{
+  "id": "homework-time",
+  "audience": "bhulkao",
+  "title": {
+    "en": "Placeholder: Homework Time",
+    "gu": "કામચલાઉ: હોમવર્કનો સમય",
+    "hi": "अस्थायी: होमवर्क का समय"
+  },
+  "placeholder": true,
+  "startNode": "start",
+  "nodes": [
+    {
+      "id": "start",
+      "text": {
+        "en": "You are doing your homework at the table. Your friend Mira holds out her phone. \"Look, a new game! Want to play?\"",
+        "gu": "તમે ટેબલ પર હોમવર્ક કરી રહ્યાં છો. તમારી મિત્ર મીરા પોતાનો ફોન આગળ ધરે છે. \"જો, નવી રમત! રમવી છે?\"",
+        "hi": "आप मेज़ पर होमवर्क कर रहे हैं। आपकी दोस्त मीरा अपना फ़ोन आगे करती है। \"देखो, नया खेल! खेलना है?\""
+      },
+      "image": {
+        "src": "placeholder-homework-phone.svg",
+        "alt": {
+          "en": "A child doing homework at a table while a friend holds out a phone with a game on it.",
+          "gu": "ટેબલ પર હોમવર્ક કરતું બાળક અને રમતવાળો ફોન આગળ ધરતી મિત્ર.",
+          "hi": "मेज़ पर होमवर्क करता बच्चा और खेल वाला फ़ोन आगे करती दोस्त।"
+        },
+        "source": "Original placeholder drawing made for this project"
+      },
+      "choices": [
+        {
+          "label": {
+            "en": "Play the game now",
+            "gu": "અત્યારે જ રમત રમો",
+            "hi": "अभी खेल खेलें"
+          },
+          "next": "play"
+        },
+        {
+          "label": {
+            "en": "Finish homework first",
+            "gu": "પહેલાં હોમવર્ક પૂરું કરો",
+            "hi": "पहले होमवर्क पूरा करें"
+          },
+          "next": "finish"
+        }
+      ]
+    },
+    {
+      "id": "play",
+      "text": {
+        "en": "You play one round. Then another, and another. When you look up, it is getting dark and your homework is still not done.",
+        "gu": "તમે એક રાઉન્ડ રમો છો. પછી બીજો, અને પછી ત્રીજો. ઉપર જુઓ છો ત્યારે અંધારું થવા આવ્યું છે અને હોમવર્ક હજી બાકી છે.",
+        "hi": "आप एक बार खेलते हैं। फिर दूसरी बार, फिर तीसरी बार। जब आप ऊपर देखते हैं, तो अँधेरा होने लगा है और होमवर्क अभी भी बाकी है।"
+      },
+      "image": {
+        "src": "placeholder-one-more-round.svg",
+        "alt": {
+          "en": "A phone showing a game, next to a clock and a closed notebook.",
+          "gu": "ઘડિયાળ અને બંધ નોટબુક પાસે રમત બતાવતો ફોન.",
+          "hi": "घड़ी और बंद कॉपी के पास खेल दिखाता फ़ोन।"
+        },
+        "source": "Original placeholder drawing made for this project"
+      },
+      "choices": [
+        {
+          "label": {
+            "en": "Keep playing",
+            "gu": "રમતાં રહો",
+            "hi": "खेलते रहें"
+          },
+          "next": "late"
+        },
+        {
+          "label": {
+            "en": "Stop and go back to homework",
+            "gu": "રમત બંધ કરી હોમવર્ક પર પાછા ફરો",
+            "hi": "खेल बंद करके होमवर्क पर लौटें"
+          },
+          "next": "stop"
+        }
+      ]
+    },
+    {
+      "id": "late",
+      "text": {
+        "en": "You keep playing until bedtime.",
+        "gu": "સૂવાના સમય સુધી તમે રમતાં જ રહો છો.",
+        "hi": "सोने के समय तक आप खेलते ही रहते हैं।"
+      },
+      "ending": {
+        "outcome": {
+          "en": "Your homework is not finished. In the morning you feel tired and worried.",
+          "gu": "તમારું હોમવર્ક પૂરું થયું નથી. સવારે તમને થાક અને ચિંતા લાગે છે.",
+          "hi": "आपका होमवर्क पूरा नहीं हुआ। सुबह आपको थकान और चिंता महसूस होती है।"
+        },
+        "lesson": {
+          "en": "Placeholder lesson: a game can wait. When we do our work first, we can enjoy playing later.",
+          "gu": "કામચલાઉ બોધ: રમત રાહ જોઈ શકે છે. પહેલાં કામ કરીએ તો પછી રમવાની વધુ મજા આવે.",
+          "hi": "अस्थायी सीख: खेल इंतज़ार कर सकता है। पहले काम कर लें, तो बाद में खेलने का मज़ा और बढ़ जाता है।"
+        }
+      }
+    },
+    {
+      "id": "stop",
+      "text": {
+        "en": "You give the phone back. \"Let's play after homework,\" you say.",
+        "gu": "તમે ફોન પાછો આપો છો. \"હોમવર્ક પછી રમીએ,\" તમે કહો છો.",
+        "hi": "आप फ़ोन वापस दे देते हैं। \"होमवर्क के बाद खेलेंगे,\" आप कहते हैं।"
+      },
+      "ending": {
+        "outcome": {
+          "en": "You finish a little late, but your homework is done, and there is still time for one game together.",
+          "gu": "થોડું મોડું થાય છે, પણ હોમવર્ક પૂરું થઈ જાય છે અને સાથે એક રમત રમવાનો સમય પણ રહે છે.",
+          "hi": "थोड़ी देर होती है, पर होमवर्क पूरा हो जाता है और साथ में एक खेल खेलने का समय भी बचता है।"
+        },
+        "lesson": {
+          "en": "Placeholder lesson: it is never too late to stop and choose what matters.",
+          "gu": "કામચલાઉ બોધ: અટકીને જે જરૂરી છે તે પસંદ કરવામાં ક્યારેય મોડું નથી થતું.",
+          "hi": "अस्थायी सीख: रुककर ज़रूरी काम चुनने में कभी देर नहीं होती।"
+        }
+      }
+    },
+    {
+      "id": "finish",
+      "text": {
+        "en": "\"Not now, Mira. I want to finish my homework first,\" you say. Mira looks a little bored.",
+        "gu": "\"અત્યારે નહીં, મીરા. મારે પહેલાં હોમવર્ક પૂરું કરવું છે,\" તમે કહો છો. મીરા થોડી કંટાળેલી લાગે છે.",
+        "hi": "\"अभी नहीं, मीरा। मुझे पहले होमवर्क पूरा करना है,\" आप कहते हैं। मीरा थोड़ी ऊबी हुई लगती है।"
+      },
+      "choices": [
+        {
+          "label": {
+            "en": "Ask Mira to do homework with you",
+            "gu": "મીરાને સાથે હોમવર્ક કરવા બોલાવો",
+            "hi": "मीरा को साथ में होमवर्क करने के लिए बुलाएँ"
+          },
+          "next": "together"
+        },
+        {
+          "label": {
+            "en": "Work on your own while Mira plays",
+            "gu": "મીરા રમે ત્યારે તમે એકલા કામ કરો",
+            "hi": "मीरा खेले, तब तक आप अकेले काम करें"
+          },
+          "next": "alone"
+        }
+      ]
+    },
+    {
+      "id": "together",
+      "text": {
+        "en": "Mira puts her phone away and opens her own books. You help each other.",
+        "gu": "મીરા ફોન બાજુ પર મૂકીને પોતાની ચોપડીઓ ખોલે છે. તમે એકબીજાને મદદ કરો છો.",
+        "hi": "मीरा फ़ोन रख देती है और अपनी किताबें खोलती है। आप एक-दूसरे की मदद करते हैं।"
+      },
+      "image": {
+        "src": "placeholder-homework-together.svg",
+        "alt": {
+          "en": "Two friends doing homework side by side, with a phone put away at the edge of the table.",
+          "gu": "બે મિત્રો બાજુબાજુમાં બેસીને હોમવર્ક કરે છે અને ફોન ટેબલના ખૂણે મૂકેલો છે.",
+          "hi": "दो दोस्त साथ बैठकर होमवर्क कर रहे हैं और फ़ोन मेज़ के कोने पर रखा है।"
+        },
+        "source": "Original placeholder drawing made for this project"
+      },
+      "ending": {
+        "outcome": {
+          "en": "You both finish early. Now there is plenty of time to play the new game together.",
+          "gu": "તમે બંને વહેલાં કામ પૂરું કરો છો. હવે સાથે નવી રમત રમવાનો પૂરતો સમય છે.",
+          "hi": "आप दोनों जल्दी काम पूरा कर लेते हैं। अब साथ में नया खेल खेलने का खूब समय है।"
+        },
+        "lesson": {
+          "en": "Placeholder lesson: good friends help each other do the right thing.",
+          "gu": "કામચલાઉ બોધ: સારા મિત્રો એકબીજાને સાચું કરવામાં મદદ કરે છે.",
+          "hi": "अस्थायी सीख: अच्छे दोस्त एक-दूसरे को सही काम करने में मदद करते हैं।"
+        }
+      }
+    },
+    {
+      "id": "alone",
+      "text": {
+        "en": "Mira plays on her own. It is hard not to look, but you keep going.",
+        "gu": "મીરા એકલી રમે છે. ત્યાં ન જોવું અઘરું છે, પણ તમે કામ ચાલુ રાખો છો.",
+        "hi": "मीरा अकेले खेलती है। उधर न देखना मुश्किल है, पर आप काम करते रहते हैं।"
+      },
+      "ending": {
+        "outcome": {
+          "en": "Your homework is done and you feel proud. Tomorrow you can play together.",
+          "gu": "તમારું હોમવર્ક પૂરું થાય છે અને તમને ગર્વ થાય છે. કાલે સાથે રમી શકાશે.",
+          "hi": "आपका होमवर्क पूरा हो जाता है और आपको गर्व महसूस होता है। कल साथ में खेल सकते हैं।"
+        },
+        "lesson": {
+          "en": "Placeholder lesson: saying \"not now\" is hard, and it is something to be proud of.",
+          "gu": "કામચલાઉ બોધ: \"અત્યારે નહીં\" કહેવું અઘરું છે, અને તે ગર્વ કરવા જેવી વાત છે.",
+          "hi": "अस्थायी सीख: \"अभी नहीं\" कहना मुश्किल है, और यह गर्व करने वाली बात है।"
+        }
+      }
+    }
+  ]
+}

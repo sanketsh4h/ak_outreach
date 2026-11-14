@@ -1,0 +1,160 @@
+{
+  "id": "one-am-exam",
+  "audience": "yuvako",
+  "title": {
+    "en": "Placeholder: 1 a.m., Exam Tomorrow",
+    "gu": "કામચલાઉ: રાતનો એક વાગ્યો, કાલે પરીક્ષા",
+    "hi": "अस्थायी: रात का एक बजा, कल परीक्षा"
+  },
+  "placeholder": true,
+  "startNode": "start",
+  "nodes": [
+    {
+      "id": "start",
+      "text": {
+        "en": "It is 1 a.m. Your exam starts at 9. You opened your phone \"for five minutes\" an hour ago, and you are still scrolling.",
+        "gu": "રાતનો એક વાગ્યો છે. સવારે નવ વાગ્યે તમારી પરીક્ષા છે. એક કલાક પહેલાં તમે \"પાંચ મિનિટ માટે\" ફોન ખોલ્યો હતો, અને હજી સ્ક્રોલ કરી રહ્યા છો.",
+        "hi": "रात का एक बजा है। सुबह नौ बजे आपकी परीक्षा है। एक घंटा पहले आपने \"पाँच मिनट के लिए\" फ़ोन खोला था, और अब भी स्क्रॉल कर रहे हैं।"
+      },
+      "image": {
+        "src": "placeholder-late-night-scroll.svg",
+        "alt": {
+          "en": "A young person in a dark room, face lit by a phone, with a clock showing 1:00 and exam notes nearby.",
+          "gu": "અંધારા ઓરડામાં ફોનના પ્રકાશમાં એક યુવાન, પાસે 1:00 બતાવતી ઘડિયાળ અને પરીક્ષાની નોંધો.",
+          "hi": "अँधेरे कमरे में फ़ोन की रोशनी में एक युवा, पास में 1:00 दिखाती घड़ी और परीक्षा के नोट्स।"
+        },
+        "source": "Original placeholder drawing made for this project"
+      },
+      "choices": [
+        {
+          "label": {
+            "en": "Watch one more video",
+            "gu": "બસ એક વધુ વીડિયો જુઓ",
+            "hi": "बस एक और वीडियो देखें"
+          },
+          "next": "more"
+        },
+        {
+          "label": {
+            "en": "Put the phone away now",
+            "gu": "હમણાં જ ફોન બાજુ પર મૂકો",
+            "hi": "अभी फ़ोन रख दें"
+          },
+          "next": "away"
+        }
+      ]
+    },
+    {
+      "id": "more",
+      "text": {
+        "en": "One video becomes ten. It is now 2 a.m. You feel wide awake, and a little anxious about the morning.",
+        "gu": "એક વીડિયોના દસ થઈ જાય છે. હવે રાતના બે વાગ્યા છે. તમને જરાય ઊંઘ નથી આવતી, અને સવારની થોડી ચિંતા થાય છે.",
+        "hi": "एक वीडियो दस बन जाते हैं। अब रात के दो बजे हैं। आपको ज़रा भी नींद नहीं आ रही, और सुबह की थोड़ी चिंता हो रही है।"
+      },
+      "choices": [
+        {
+          "label": {
+            "en": "Keep scrolling until you feel sleepy",
+            "gu": "ઊંઘ આવે ત્યાં સુધી સ્ક્રોલ કરતા રહો",
+            "hi": "नींद आने तक स्क्रॉल करते रहें"
+          },
+          "next": "groggy"
+        },
+        {
+          "label": {
+            "en": "Stop, even though sleep feels far away",
+            "gu": "ઊંઘ દૂર લાગે તોય હવે અટકી જાઓ",
+            "hi": "नींद दूर लगे, फिर भी अब रुक जाएँ"
+          },
+          "next": "stop-late"
+        }
+      ]
+    },
+    {
+      "id": "groggy",
+      "text": {
+        "en": "You finally fall asleep close to 4 a.m.",
+        "gu": "આખરે લગભગ ચાર વાગ્યે તમને ઊંઘ આવે છે.",
+        "hi": "आख़िरकार लगभग चार बजे आपको नींद आती है।"
+      },
+      "ending": {
+        "outcome": {
+          "en": "You wake up groggy. In the exam, answers you knew feel just out of reach.",
+          "gu": "તમે ઘેનમાં ઊઠો છો. પરીક્ષામાં જે જવાબ આવડતા હતા તે પણ યાદ આવતા નથી.",
+          "hi": "आप सुस्ती में उठते हैं। परीक्षा में जो जवाब आते थे, वे भी याद नहीं आ रहे।"
+        },
+        "lesson": {
+          "en": "Placeholder reflection: when did \"five minutes\" last stay five minutes? What makes it hard to stop?",
+          "gu": "કામચલાઉ મનન: છેલ્લે ક્યારે \"પાંચ મિનિટ\" ખરેખર પાંચ મિનિટ રહી હતી? અટકવું કેમ અઘરું લાગે છે?",
+          "hi": "अस्थायी मनन: पिछली बार \"पाँच मिनट\" सच में पाँच मिनट कब रहे थे? रुकना मुश्किल क्यों लगता है?"
+        }
+      }
+    },
+    {
+      "id": "stop-late",
+      "text": {
+        "en": "You leave the phone in another room, read your notes once more and lie down.",
+        "gu": "તમે ફોન બીજા ઓરડામાં મૂકી આવો છો, નોંધો એક વાર ફરી વાંચો છો અને સૂઈ જાઓ છો.",
+        "hi": "आप फ़ोन दूसरे कमरे में रख आते हैं, नोट्स एक बार और पढ़ते हैं और लेट जाते हैं।"
+      },
+      "ending": {
+        "outcome": {
+          "en": "Sleep comes slowly, but it comes. You are tired in the morning, though steadier than you expected.",
+          "gu": "ઊંઘ ધીમે ધીમે આવે છે, પણ આવે છે. સવારે થાક લાગે છે, છતાં ધાર્યા કરતાં મન વધુ સ્થિર છે.",
+          "hi": "नींद धीरे-धीरे आती है, पर आती है। सुबह थकान है, फिर भी मन सोचे से ज़्यादा शांत है।"
+        },
+        "lesson": {
+          "en": "Placeholder reflection: stopping late is still stopping. What would make it easier to stop earlier next time?",
+          "gu": "કામચલાઉ મનન: મોડું અટકવું પણ અટકવું જ છે. આવતી વખતે વહેલાં અટકવા માટે શું મદદ કરી શકે?",
+          "hi": "अस्थायी मनन: देर से रुकना भी रुकना ही है। अगली बार जल्दी रुकने में क्या मदद कर सकता है?"
+        }
+      }
+    },
+    {
+      "id": "away",
+      "text": {
+        "en": "You put the phone on charge across the room. Your hand still reaches for it out of habit.",
+        "gu": "તમે ફોનને ઓરડાની બીજી બાજુ ચાર્જિંગમાં મૂકો છો. આદતને કારણે હાથ હજી તેની તરફ જાય છે.",
+        "hi": "आप फ़ोन को कमरे के दूसरी तरफ़ चार्जिंग पर लगा देते हैं। आदत से हाथ अब भी उसकी ओर बढ़ता है।"
+      },
+      "choices": [
+        {
+          "label": {
+            "en": "Sit quietly and take ten slow breaths",
+            "gu": "શાંતિથી બેસો અને દસ ધીમા શ્વાસ લો",
+            "hi": "शांति से बैठें और दस धीमी साँसें लें"
+          },
+          "next": "calm"
+        },
+        {
+          "label": {
+            "en": "Check it one last time",
+            "gu": "છેલ્લી વાર એક નજર નાખી લો",
+            "hi": "आख़िरी बार एक नज़र देख लें"
+          },
+          "next": "more"
+        }
+      ]
+    },
+    {
+      "id": "calm",
+      "text": {
+        "en": "The urge fades a little with each breath. You switch off the light.",
+        "gu": "દરેક શ્વાસ સાથે ફોન જોવાની ઇચ્છા થોડી ઓછી થાય છે. તમે લાઇટ બંધ કરો છો.",
+        "hi": "हर साँस के साथ फ़ोन देखने की इच्छा थोड़ी कम होती है। आप बत्ती बुझा देते हैं।"
+      },
+      "ending": {
+        "outcome": {
+          "en": "You wake up rested and walk into the exam with a clear head.",
+          "gu": "તમે તાજગી સાથે ઊઠો છો અને સ્પષ્ટ મન સાથે પરીક્ષા આપવા જાઓ છો.",
+          "hi": "आप तरोताज़ा उठते हैं और साफ़ मन से परीक्षा देने जाते हैं।"
+        },
+        "lesson": {
+          "en": "Placeholder reflection: the pull of the phone passes if we give it a moment. What helps you wait it out?",
+          "gu": "કામચલાઉ મનન: થોડી ક્ષણ આપીએ તો ફોનનું ખેંચાણ ઓસરી જાય છે. તેને પસાર થવા દેવા માટે તમને શું મદદ કરે છે?",
+          "hi": "अस्थायी मनन: अगर हम थोड़ा ठहरें, तो फ़ोन का खिंचाव गुज़र जाता है। उसे गुज़रने देने में आपकी मदद क्या करता है?"
+        }
+      }
+    }
+  ]
+}

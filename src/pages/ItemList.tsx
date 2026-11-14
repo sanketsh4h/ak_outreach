@@ -44,7 +44,7 @@ export default function ItemList({
                 title={l(item.title)}
                 lang={localizedLang(item.title, lang)}
                 art={kind === 'story' ? <StoryArt /> : <PrasangArt />}
-                sample={item.placeholder}
+                placeholder={item.placeholder}
               />
             </CardItem>
           ))}

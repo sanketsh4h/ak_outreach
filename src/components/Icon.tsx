@@ -7,7 +7,6 @@ export type IconName =
   | 'game'
   | 'story'
   | 'prasang'
-  | 'sample'
   | 'external'
   | 'check'
   | 'dot'
@@ -28,7 +27,6 @@ const PATHS: Record<IconName, string> = {
   game: 'M6 9h12a3 3 0 013 3v2a3 3 0 01-5.2 2L14 14h-4l-1.8 2A3 3 0 013 14v-2a3 3 0 013-3zM8 11v3M6.5 12.5h3M15.5 12h.01M17.5 13.5h.01',
   story: 'M4 5.5C6 4.5 9 4.5 12 6c3-1.5 6-1.5 8-.5V19c-2-1-5-1-8 .5-3-1.5-6-1.5-8-.5zM12 6v13.5',
   prasang: 'M12 3c2 2.5 3 4.5 3 6.5a3 3 0 01-6 0C9 7.5 10 5.5 12 3zM5 15h14l-2 5H7z',
-  sample: 'M4 12l8-8h7v7l-8 8zM15.5 8.5h.01',
   external: 'M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5',
   check: 'M5 12.5l4.5 4.5L19 7.5',
   dot: 'M12 12h.01',

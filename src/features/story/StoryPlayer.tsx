@@ -1,0 +1,135 @@
+import { useEffect, useId, useMemo, useReducer, useRef } from 'react'
+import { useI18n } from '../../i18n/context'
+import { localizedLang } from '../../i18n/localized'
+import { Icon } from '../../components/Icon'
+import { LessonBox } from '../../components/LessonBox'
+import { ContentImage } from '../../components/ContentImage'
+import { PlaceholderNotice } from '../../components/Placeholder'
+import { focusElement } from '../../components/focus'
+import type { Story, StoryNode } from '../../content/schemas'
+import type { SectionId } from '../../config/sections'
+import { storyReducer } from './state'
+import styles from './Story.module.css'
+
+function NodeMedia({ node, placeholder }: { node: StoryNode; placeholder: boolean }) {
+  const { l } = useI18n()
+  if (node.image) {
+    return (
+      <ContentImage src={node.image.src} alt={l(node.image.alt)} placeholder={placeholder} eager />
+    )
+  }
+  if (node.video) {
+    return (
+      <video
+        className={styles.video}
+        controls
+        playsInline
+        preload="metadata"
+        poster={node.video.poster}
+        aria-label={l(node.video.alt)}
+      >
+        <source src={node.video.src} />
+        {node.video.captions && <track kind="captions" src={node.video.captions} default />}
+      </video>
+    )
+  }
+  return null
+}
+
+/** Plays a validated story. Bhulkao leads with the picture; Yuvako leads with the text. */
+export function StoryPlayer({ story, section }: { story: Story; section: SectionId }) {
+  const { t, l, lang } = useI18n()
+  const [history, dispatch] = useReducer(storyReducer, [story.startNode])
+  const nodes = useMemo(() => new Map(story.nodes.map((n) => [n.id, n])), [story])
+  const node = nodes.get(history[history.length - 1] ?? story.startNode) as StoryNode
+  const headingRef = useRef<HTMLHeadingElement>(null)
+  const isFirst = useRef(true)
+  const headingId = useId()
+  const pictureFirst = section === 'bhulkao'
+
+  // Move focus to the new step's heading whenever the step changes (not on first load).
+  useEffect(() => {
+    if (isFirst.current) {
+      isFirst.current = false
+      return
+    }
+    focusElement(headingRef.current)
+    headingRef.current?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+  }, [history])
+
+  const media = <NodeMedia node={node} placeholder={story.placeholder} />
+
+  return (
+    <div className={styles.story} data-audience={section}>
+      {story.placeholder && <PlaceholderNotice />}
+      <h1 lang={localizedLang(story.title, lang)}>{l(story.title)}</h1>
+      <section className={styles.node} aria-labelledby={headingId} data-testid="story-node">
+        <h2 id={headingId} ref={headingRef} className={styles.step}>
+          {node.ending ? t('story.ending') : t('story.step', { n: history.length })}
+        </h2>
+        {pictureFirst && media}
+        <p className={styles.text} lang={localizedLang(node.text, lang)}>
+          {l(node.text)}
+        </p>
+        {!pictureFirst && media}
+
+        {node.choices && (
+          <>
+            <p className={styles.prompt}>{t('story.choose')}</p>
+            <ul className={styles.choices}>
+              {node.choices.map((choice) => (
+                <li key={`${choice.next}-${choice.label.en}`}>
+                  <button
+                    type="button"
+                    className={styles.choice}
+                    onClick={() => dispatch({ type: 'choose', next: choice.next })}
+                    lang={localizedLang(choice.label, lang)}
+                  >
+                    <span>{l(choice.label)}</span>
+                    <Icon name="arrow-right" size={22} />
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+
+        {node.ending && (
+          <>
+            <p className={styles.outcome} lang={localizedLang(node.ending.outcome, lang)}>
+              {l(node.ending.outcome)}
+            </p>
+            <LessonBox
+              heading={t(section === 'bhulkao' ? 'story.lesson.bhulkao' : 'story.lesson.yuvako')}
+            >
+              <p lang={localizedLang(node.ending.lesson, lang)}>{l(node.ending.lesson)}</p>
+            </LessonBox>
+          </>
+        )}
+      </section>
+
+      <div className={styles.controls}>
+        {history.length > 1 && (
+          <button
+            type="button"
+            className={styles.secondary}
+            onClick={() => dispatch({ type: 'back' })}
+          >
+            <Icon name="back" size={20} />
+            {t('story.back')}
+          </button>
+        )}
+        {node.ending && (
+          <button
+            type="button"
+            className={styles.primary}
+            onClick={() => dispatch({ type: 'restart', start: story.startNode })}
+          >
+            <Icon name="restart" size={20} />
+            {t('story.restart')}
+          </button>
+        )}
+      </div>
+    </div>
+  )
+}

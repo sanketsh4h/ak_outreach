@@ -112,8 +112,13 @@ select {
   outline-offset: 2px;
 }
 
-/* Headings and other targets receive focus programmatically; no ring needed while not tabbing. */
-[tabindex='-1']:focus:not(:focus-visible) {
+/*
+ * Headings and the main region receive focus programmatically (after a page
+ * or step change) so screen readers announce them. They cannot be reached by
+ * Tab, so they do not need a focus ring.
+ */
+[tabindex='-1']:focus:not(:focus-visible),
+:is(h1, h2, h3, main)[tabindex='-1']:focus {
   outline: none;
 }
 

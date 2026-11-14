@@ -3,6 +3,8 @@ import { usePage } from '../components/page-context'
 import { Card, CardItem, CardList } from '../components/Card'
 import { KiteArt, LampArt } from '../components/Art'
 import { SECTIONS, paths } from '../config/sections'
+import { INTRO_COPY_IS_PLACEHOLDER } from '../config/site'
+import { PlaceholderNotice } from '../components/Placeholder'
 import styles from './pages.module.css'
 
 export default function Intro() {
@@ -11,6 +13,7 @@ export default function Intro() {
   return (
     <>
       <h1>{t('site.title')}</h1>
+      {INTRO_COPY_IS_PLACEHOLDER && <PlaceholderNotice />}
       <p className={styles.lead}>{t('site.tagline')}</p>
       <p>{t('intro.lead')}</p>
       <CardList>

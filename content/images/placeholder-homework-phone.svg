@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Original placeholder drawing made for this project. -->
+  <rect width="400" height="300" fill="#fdebc8"/>
+  <rect x="0" y="210" width="400" height="90" fill="#e8c48f"/>
+  <rect x="300" y="40" width="70" height="60" rx="6" fill="#bfe3f2" stroke="#8a6a3d" stroke-width="5"/>
+  <path d="M335 40v60M300 70h70" stroke="#8a6a3d" stroke-width="4"/>
+  <rect x="60" y="170" width="230" height="16" rx="6" fill="#a86b32"/>
+  <rect x="80" y="186" width="12" height="70" fill="#a86b32"/>
+  <rect x="258" y="186" width="12" height="70" fill="#a86b32"/>
+  <rect x="110" y="150" width="90" height="22" rx="3" fill="#ffffff" stroke="#5b3a9b" stroke-width="3"/>
+  <path d="M120 158h60M120 165h40" stroke="#5b3a9b" stroke-width="3" stroke-linecap="round"/>
+  <path d="M205 150l30-18" stroke="#e4572e" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="150" cy="92" r="30" fill="#8d5a3b"/>
+  <path d="M120 86c4-26 56-30 60 0" fill="#2b1d16"/>
+  <circle cx="140" cy="94" r="3.5" fill="#1c2230"/>
+  <circle cx="160" cy="94" r="3.5" fill="#1c2230"/>
+  <path d="M142 106q8 5 16 0" stroke="#1c2230" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M118 170c0-30 14-46 32-46s32 16 32 46z" fill="#5b3a9b"/>
+  <circle cx="300" cy="104" r="28" fill="#c68a5a"/>
+  <path d="M272 98c2-24 54-26 56 0l-6-6-8 6-8-8-8 8-8-6z" fill="#3b2a20"/>
+  <circle cx="291" cy="106" r="3.5" fill="#1c2230"/>
+  <circle cx="309" cy="106" r="3.5" fill="#1c2230"/>
+  <path d="M292 117q8 6 16 0" stroke="#1c2230" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M268 200c0-40 14-66 32-66s32 26 32 66z" fill="#2f8f5b"/>
+  <rect x="236" y="128" width="30" height="50" rx="6" fill="#1c2230" transform="rotate(-12 251 153)"/>
+  <rect x="241" y="134" width="20" height="34" rx="3" fill="#f4c552" transform="rotate(-12 251 153)"/>
+  <circle cx="249" cy="148" r="5" fill="#e4572e"/>
+</svg>

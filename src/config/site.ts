@@ -35,3 +35,11 @@ export const STORAGE_KEYS = {
   wordsDaily: 'outreach.words.daily',
   doodleBest: 'outreach.doodle.best',
 } as const
+
+/**
+ * The intro page's welcome text (in locales/*.json, keys "site.tagline" and
+ * "intro.*") is placeholder copy until the owner supplies the final wording.
+ * Set this to false once it has been replaced; the placeholder banner on the
+ * intro page then disappears.
+ */
+export const INTRO_COPY_IS_PLACEHOLDER = true

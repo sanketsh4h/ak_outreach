@@ -1,0 +1,98 @@
+import { cpSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
+import { afterEach, describe, expect, it } from 'vitest'
+import { validateContent } from './validate-content'
+
+const dirs: string[] = []
+
+/** Copy the real content and locales into a temporary folder so tests can break them. */
+function fixture(): string {
+  const dir = mkdtempSync(join(tmpdir(), 'content-test-'))
+  dirs.push(dir)
+  cpSync('content', join(dir, 'content'), { recursive: true })
+  cpSync('locales', join(dir, 'locales'), { recursive: true })
+  return dir
+}
+
+function edit(dir: string, rel: string, change: (text: string) => string) {
+  const path = join(dir, rel)
+  writeFileSync(path, change(readFileSync(path, 'utf8')))
+}
+
+const errorsOf = (dir: string) =>
+  validateContent(dir)
+    .problems.filter((p) => p.severity === 'error')
+    .map((p) => `${p.file}: ${p.message}`)
+
+afterEach(() => {
+  for (const d of dirs.splice(0)) rmSync(d, { recursive: true, force: true })
+})
+
+describe('validateContent', () => {
+  it('passes the shipped content with no errors and no missing translations', () => {
+    const { problems } = validateContent('.')
+    expect(problems.filter((p) => p.severity !== 'warning')).toEqual([])
+  })
+
+  it('fails a story whose choice points to a missing node', () => {
+    const dir = fixture()
+    edit(dir, 'content/stories/homework-time.json', (s) =>
+      s.replace('"next": "play"', '"next": "nowhere"'),
+    )
+    expect(errorsOf(dir).join('\n')).toMatch(/homework-time\.json: .*missing node "nowhere"/)
+  })
+
+  it('fails a story with missing English text', () => {
+    const dir = fixture()
+    edit(dir, 'content/stories/one-am-exam.json', (s) =>
+      s.replace('"en": "Watch one more video"', '"en": ""'),
+    )
+    expect(errorsOf(dir).join('\n')).toMatch(/one-am-exam\.json: .*English text is required/)
+  })
+
+  it('fails a story picture with no source', () => {
+    const dir = fixture()
+    edit(dir, 'content/stories/one-am-exam.json', (s) =>
+      s.replace('"source": "Original placeholder drawing made for this project"', '"source": ""'),
+    )
+    expect(errorsOf(dir).join('\n')).toMatch(/source/)
+  })
+
+  it('fails a prasang picture with no alt text', () => {
+    const dir = fixture()
+    edit(dir, 'content/prasangs/patient-seed.en.md', (s) =>
+      s.replace('![A tall green plant with a pink flower growing in the pot.]', '![]'),
+    )
+    expect(errorsOf(dir).join('\n')).toMatch(/patient-seed\.en\.md: .*no alt text/)
+  })
+
+  it('fails prasang language files that disagree', () => {
+    const dir = fixture()
+    edit(dir, 'content/prasangs/patient-seed.hi.md', (s) =>
+      s.replace('audience: bhulkao', 'audience: yuvako'),
+    )
+    edit(dir, 'content/prasangs/patient-seed.gu.md', (s) =>
+      s.replace('placeholder: true', 'placeholder: false'),
+    )
+    const errors = errorsOf(dir).join('\n')
+    expect(errors).toMatch(/patient-seed\.hi\.md: audience differs/)
+    expect(errors).toMatch(/patient-seed\.gu\.md: placeholder differs/)
+  })
+
+  it('reports a missing translation without failing, unless strict', () => {
+    const dir = fixture()
+    edit(dir, 'locales/gu.json', (s) => s.replace(/\s*"games\.lead": "[^"]*",/, ''))
+    const { problems } = validateContent(dir)
+    expect(problems.filter((p) => p.severity === 'error')).toEqual([])
+    expect(problems.filter((p) => p.severity === 'translation').map((p) => p.message)).toContain(
+      '"games.lead" is missing',
+    )
+  })
+
+  it('fails an interface string whose {placeholders} differ from English', () => {
+    const dir = fixture()
+    edit(dir, 'locales/hi.json', (s) => s.replace('{page} पर वापस जाएँ', '{pg} पर वापस जाएँ'))
+    expect(errorsOf(dir).join('\n')).toMatch(/nav\.back.*same \{placeholders\}/)
+  })
+})

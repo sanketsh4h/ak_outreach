@@ -8,6 +8,8 @@ import GamesList from './pages/GamesList'
 import GamePage from './pages/GamePage'
 import ItemList from './pages/ItemList'
 import NotFound from './pages/NotFound'
+import StoryPage from './pages/StoryPage'
+import PrasangPage from './pages/PrasangPage'
 
 /** React Router wants the base path without a trailing slash. */
 const basename = import.meta.env.BASE_URL.replace(/\/+$/, '') || '/'
@@ -31,9 +33,9 @@ export default function App() {
                   />
                 ))}
                 <Route path={s.storySegment} element={<ItemList section={s.id} kind="story" />} />
-                <Route path={`${s.storySegment}/:id`} element={<NotFound section={s.id} item />} />
+                <Route path={`${s.storySegment}/:id`} element={<StoryPage section={s.id} />} />
                 <Route path="prasang" element={<ItemList section={s.id} kind="prasang" />} />
-                <Route path="prasang/:id" element={<NotFound section={s.id} item />} />
+                <Route path="prasang/:id" element={<PrasangPage section={s.id} />} />
                 <Route path="*" element={<NotFound section={s.id} />} />
               </Route>
             ))}
