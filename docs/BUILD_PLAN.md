@@ -26,11 +26,11 @@ None of these block the build. Each default is isolated to one config value or c
 | # | Open question | Default for this build |
 | --- | --- | --- |
 | 1 | Commit to default branch, or branch with PR? | Work on the assigned feature branch. Do not open a pull request until the owner asks. |
-| 2 | Which Harvard study does the green pill open? | `studyUrl` in `content/pills.json`, set to `https://www.harvard.edu/` as a neutral stand-in and flagged `placeholder`. Do not guess the study. |
-| 3 | Word list spellings and length rule | `seva`, `swadharma`, `prarthana` ("pratbna" is assumed to mean this) plus about nine more sample words. Rule: lowercase a–z, 3 to 10 letters. All flagged placeholder. |
+| 2 | What does the green pill open? The owner has confirmed it has nothing to do with Harvard; the real destination is not yet supplied. | `greenPillUrl` in `content/pills.json`, left `null`. While it is `null` the green pill opens an on-site placeholder screen. No Harvard link or wording anywhere. Do not guess a destination. |
+| 3 | Word list spellings and length rule | Owner-confirmed words: `seva`, `swadharma`, `prarthna` (प्रार्थना, પ્રાર્થના; spelled in Latin as the owner wrote it). About nine more placeholder words fill out the list. Rule: lowercase a–z, 3 to 10 letters. |
 | 4 | Who translates and reviews Gujarati and Hindi? | The builder writes draft Gujarati and Hindi so every page is usable. Both are flagged unreviewed in config, shown as a small note in the footer, and listed in the README as a launch blocker. |
 | 5 | Native-script word game? | No. Puzzle is played in Latin transliteration in all three languages; meaning and reflection appear in the chosen language. |
-| 6 | Who supplies and approves real content? | Unknown. All shipped content is sample content with `"placeholder": true` and a visible "Sample" tag. |
+| 6 | Who supplies and approves real content? | Unknown. All shipped content is placeholder content with `"placeholder": true`, marked unmistakably as described in section 7. The owner has asked for the placeholders to stay until real content arrives. |
 | 7 | Bhulkao age range | Assume primary-school age. Reading level is short sentences; game speed is a config value. |
 | 8 | Branding | Working title "Digital Outreach" (a locale string), no logo, a placeholder palette held in CSS custom properties in one file. |
 | 9 | Hosting | Host-agnostic static build. A manually triggered GitHub Pages workflow is included but nothing is deployed until the owner chooses. |
@@ -136,7 +136,7 @@ Every game, story and prasang stays within three taps of the intro page: section
 - No analytics, no cookies, no third-party requests of any kind.
 - `localStorage` holds only the language choice, the day's word-game guesses and the doodle best score.
 - No free-text input in the Bhulkao section. The word game's letter input is Yuvako only.
-- `ExternalLink` component: every external link opens a "You are leaving this site" step first. The one exception is the green pill, whose whole purpose is to open the study.
+- `ExternalLink` component: every external link opens a "You are leaving this site" step first. The one exception is the green pill, whose whole purpose is to open its destination.
 - Production builds add a Content-Security-Policy meta tag limiting everything to the site's own origin.
 - An end-to-end test fails if any page requests a host other than the site's own.
 
@@ -149,7 +149,7 @@ Every game, story and prasang stays within three taps of the intro page: section
 
 ## 7. Content model
 
-Every visitor-facing text field is an object with `en`, `gu` and `hi` keys. Every content item may carry `"placeholder": true`, which renders the "Sample" tag.
+Every visitor-facing text field is an object with `en`, `gu` and `hi` keys. Every content item may carry `"placeholder": true`, which turns on the placeholder marking described below.
 
 **Stories** (`content/stories/*.json`): `id`, `audience` (`bhulkao` or `yuvako`), `title`, `startNode`, `nodes[]`, `placeholder`. A node has `id`, `text`, an optional `image` (`src`, `alt`, `source`) or `video` (`src`, `poster`, `alt`, optional captions file), and exactly one of:
 
@@ -160,16 +160,28 @@ Every visitor-facing text field is an object with `en`, `gu` and `hi` keys. Ever
 
 **Doodle items** (`content/doodle-items.json`): `config` (`startSpeed`, `speedRamp`, `maxSpeed`, `spawnInterval`, `negativeShare`) and `items[]` with `label`, `kind` (`positive` or `negative`), `icon`, `explanation` (required for negatives).
 
-**Pills** (`content/pills.json`): `studyUrl`, `studyUrlPlaceholder`, and `cards[]` with `path` (`red` or `blue`), `text`, `source`.
+**Pills** (`content/pills.json`): `greenPillUrl` (a URL, or `null` until the owner supplies it), and `cards[]` with `path` (`red` or `blue`), `text`, `source`, `placeholder`.
 
-**Words** (`content/words.json`): `words[]` with `word`, `meaning`, `reflection`.
+**Words** (`content/words.json`): `words[]` with `word` (Latin transliteration, used for play), `native` (the word in Gujarati and Devanagari script, for example `{"gu": "પ્રાર્થના", "hi": "प्रार्थना"}`), `meaning`, `reflection`, `placeholder`. `native` is shown beside the word on the finish screen; it is optional, and the validator lists words that lack it.
+
+### Placeholder marking
+
+The owner wants the placeholder content kept, and wants it to be obvious that it is a placeholder that will be replaced later. A small tag is not enough.
+
+- A shared `PlaceholderNotice` banner sits at the top of every placeholder story, prasang, pill sequence, word-game result and doodle game, and above the intro page's placeholder copy. It reads, in the chosen language, "Placeholder content. This will be replaced with the final content."
+- The banner is hard to miss: full width, dashed border, striped background, a warning icon and the word "Placeholder" in bold. It does not rely on colour.
+- Cards on list and home pages that lead to a placeholder item carry a "Placeholder" badge.
+- While any content file is flagged placeholder, a thin strip under the header on every page says the site is a preview and that placeholder content will be replaced. It disappears by itself once no placeholder content remains.
+- Placeholder text says so in its own words where that reads naturally. Titles start with "Placeholder:", and red-pill cards read like "Placeholder card 1: a sourced point about sleep goes here."
+- Placeholder illustrations carry a visible "Placeholder" label inside the picture.
+- The tag text is "Placeholder", not "Sample", everywhere.
 
 ### Rules for sample content
 
 - Illustrations are original SVGs drawn for this project, with `source` recorded as such. Nothing is downloaded.
 - Sample prasangs are plainly fictional moral stories. They must not be attributed to any real person, saint, scripture or organisation; real prasangs come from the content owners.
 - Sample red-pill cards describe what will go there and carry `source: null`. No statistics, findings or citations are invented.
-- Word meanings are short, general glosses, flagged for review.
+- Word meanings are short, general glosses, flagged for review. The three owner-confirmed words are real entries; only their meanings and reflections are placeholder.
 - Bhulkao sample story: "A friend offers you their phone during homework time." Yuvako sample scenario: "It is 1 a.m. and you are still scrolling before an exam."
 
 ## 8. Feature specs
@@ -196,12 +208,12 @@ A small state machine: `start`, `red` (card index), `blue`, `green`.
 1. Start: a red pill and a blue pill with a one-line prompt. Each pill carries a text label, so the choice does not rest on colour.
 2. Red: cards from `pills.json`, one at a time, with Next, Back and a progress indicator. Each card shows its source, or a "Source needed" tag when it has none.
 3. Blue: a short "blissful ignorance" screen that dissolves after about three seconds, or on tap, into the message that ignoring it is not an option.
-4. Both paths end on a green pill button that opens `studyUrl` in a new tab with `rel="noopener noreferrer"`. While `studyUrlPlaceholder` is true, a "Sample" tag sits beside it.
+4. Both paths end on a green pill button. When `greenPillUrl` is set, tapping it opens that URL in a new tab with `rel="noopener noreferrer"`. While it is `null`, tapping it opens an on-site placeholder screen saying the green pill's destination will be added later, with the `PlaceholderNotice` banner. The green pill has nothing to do with Harvard: no Harvard link, name or wording appears in the game.
 5. "Start over" returns to step 1. After finishing, the other pill can be chosen.
 
 The red and blue pill idea is used generically. No film imagery, quotes, character names or code-rain styling.
 
-Done when: both paths reach the green pill, the green pill opens the configured URL in a new tab, Start over works, and the whole flow works by keyboard and at 360 px.
+Done when: both paths reach the green pill, the green pill opens the configured URL in a new tab (tested with a URL set) and the placeholder screen when none is set, Start over works, and the whole flow works by keyboard and at 360 px.
 
 ### Adhyatmik word game
 
@@ -268,8 +280,8 @@ If the repository refuses a push that contains workflow files, leave them out of
 - Works at 360 px width; fully keyboard navigable; colour is never the only signal.
 - Every page and game is usable in English, Gujarati and Hindi; strict validation reports no missing interface strings.
 - No personal data collected; no third-party requests.
-- All sample content shows the "Sample" tag.
-- The README lists every open question from section 2 as answered or still open, and separately lists the launch blockers: translation review, real content, sources for every red-pill claim, the study link, branding, hosting.
+- All placeholder content carries the placeholder marking from section 7, and nobody could mistake it for final content.
+- The README lists every open question from section 2 as answered or still open, and separately lists the launch blockers: translation review, real content, sources for every red-pill claim, the green pill's destination, branding, hosting.
 
 ## 11. Final report from the builder
 
